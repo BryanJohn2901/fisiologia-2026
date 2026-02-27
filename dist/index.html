@@ -768,13 +768,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 var match = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
                 return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : '';
             }
+            var UTM_STORAGE_KEY = 'fisiologia_lead_utm';
+            function saveUtmToStorage() {
+                try {
+                    var fromUrl = {
+                        utm_source: getQueryParam('utm_source'),
+                        utm_term: getQueryParam('utm_term'),
+                        utm_campaign: getQueryParam('utm_campaign'),
+                        utm_medium: getQueryParam('utm_medium'),
+                        utm_content: getQueryParam('utm_content'),
+                        url: window.location.href || ''
+                    };
+                    var hasAny = fromUrl.utm_source || fromUrl.utm_term || fromUrl.utm_campaign || fromUrl.utm_medium || fromUrl.utm_content;
+                    if (hasAny || fromUrl.url) sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(fromUrl));
+                } catch (e) {}
+            }
+            function getStoredUtm() {
+                try {
+                    var raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+                    return raw ? JSON.parse(raw) : {};
+                } catch (e) { return {}; }
+            }
             function fillUtmAndUrl() {
-                inputUtmSource.value = getQueryParam('utm_source');
-                inputUtmTerm.value = getQueryParam('utm_term');
-                inputUtmCampaign.value = getQueryParam('utm_campaign');
-                inputUtmMedium.value = getQueryParam('utm_medium');
-                inputUtmContent.value = getQueryParam('utm_content');
-                inputUrl.value = window.location.href || '';
+                var fromUrl = {
+                    utm_source: getQueryParam('utm_source'),
+                    utm_term: getQueryParam('utm_term'),
+                    utm_campaign: getQueryParam('utm_campaign'),
+                    utm_medium: getQueryParam('utm_medium'),
+                    utm_content: getQueryParam('utm_content'),
+                    url: window.location.href || ''
+                };
+                var stored = getStoredUtm();
+                inputUtmSource.value = (fromUrl.utm_source || stored.utm_source || '').trim();
+                inputUtmTerm.value = (fromUrl.utm_term || stored.utm_term || '').trim();
+                inputUtmCampaign.value = (fromUrl.utm_campaign || stored.utm_campaign || '').trim();
+                inputUtmMedium.value = (fromUrl.utm_medium || stored.utm_medium || '').trim();
+                inputUtmContent.value = (fromUrl.utm_content || stored.utm_content || '').trim();
+                inputUrl.value = (fromUrl.url || stored.url || window.location.href || '').trim();
+                saveUtmToStorage();
             }
 
             function openModal() {
