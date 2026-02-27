@@ -12,75 +12,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pós-Graduação em Fisiologia do Exercício | Personal Trainer Academy</title>
-    <meta name="description" content="Aprenda como prescrever de forma segura e eficaz para grupos especiais, e torne-se o Personal Trainer mais disputado do Mercado!">
-    
+
     <link rel="preload" href="./assets/WEB.webp" as="image">
     <link rel="preload" href="./assets/logo.svg" as="image">
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            bg: '#050505',       /* Preto Profundo */
-                            surface: '#121212',  /* Cinza Escuro */
-                            surfaceHighlight: '#1A1A1A',
-                            primary: '#00C2FF',  /* Cyan/Azul Claro do Print */
-                            accent: '#0088B2',   /* Azul Escuro */
-                        }
-                    },
-                    backgroundImage: {
-                        'mesh': "radial-gradient(at 0% 0%, rgba(0, 194, 255, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(0, 194, 255, 0.05) 0px, transparent 50%)",
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .text-stroke { -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1); color: transparent; }
-        .card-hover:hover .text-stroke { -webkit-text-stroke: 1px rgba(0, 194, 255, 0.3); }
-        .glass-panel { background: rgba(18, 18, 18, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .feature-grid {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        @keyframes shimmer { 100% { transform: translateX(100%); } }
-        .animate-marquee { animation: marquee-scroll 120s linear infinite; }
-        .animate-marquee:hover { animation-play-state: paused; }
-        .modal-backdrop { background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(4px); }
-        .modal-phone-wrap { display: flex; border-radius: 0.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #1A1A1A; }
-        .modal-phone-prefix { background: #00C2FF; color: #050505; padding: 0.75rem 1rem; font-weight: 700; display: flex; align-items: center; flex-shrink: 0; }
-        .modal-phone-input { flex: 1; background: transparent; border: none; padding: 0.75rem 1rem; color: white; outline: none; }
-    </style>
+    <meta name="description" content="Pós-Graduação em Fisiologia do Exercício aplicada a Grupos Especiais. Reconhecida pelo MEC. Aprenda a prescrever exercícios de forma segura para idosos, hipertensos, gestantes e destaque-se no mercado. Aulas ao vivo e gravadas, 18 meses.">
+    <link rel="canonical" href="https://www.personaltraineracademy.com.br/fisiologia-2026/">
+
+    <meta property="og:title" content="Pós-Graduação em Fisiologia do Exercício | Personal Trainer Academy">
+    <meta property="og:description" content="Pós-Graduação em Fisiologia do Exercício aplicada a Grupos Especiais. Reconhecida pelo MEC. Prescreva com segurança para grupos especiais e torne-se o Personal Trainer mais disputado do mercado.">
+    <meta property="og:image" content="https://www.personaltraineracademy.com.br/fisiologia-2026/assets/og-image.jpg">
+    <meta property="og:url" content="https://www.personaltraineracademy.com.br/fisiologia-2026/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pós-Graduação em Fisiologia do Exercício | Personal Trainer Academy">
+    <meta name="twitter:description" content="Pós-Graduação em Fisiologia do Exercício aplicada a Grupos Especiais. Reconhecida pelo MEC. 18 meses, aulas ao vivo e gravadas.">
+    <meta name="twitter:image" content="https://www.personaltraineracademy.com.br/fisiologia-2026/assets/og-image.jpg">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
 
 <body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFKWT7SP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000">
+    <header>
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000" aria-label="Navegação principal">
         <div class="container mx-auto max-w-5xl">
             <div class="relative flex items-center justify-between px-6 py-3 rounded-full bg-[#050505]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-brand-primary/30 hover:bg-[#050505]/90">
-                <a href="#" class="block hover:opacity-80 transition-opacity duration-300">
+                <a href="#hero" class="block hover:opacity-80 transition-opacity duration-300">
                     <img src="./assets/logo.svg" alt="Personal Trainer Academy" class="h-8 md:h-10 w-auto" width="120" height="40" fetchpriority="high">
                 </a>
                 <div class="hidden md:flex items-center gap-10">
@@ -97,7 +73,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
                 </div>
-                <a href="#" data-open-lead-modal class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-primary px-8 py-2.5 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,194,255,0.6)] hover:scale-105">
+                <a href="#matricula" data-open-lead-modal class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-primary px-8 py-2.5 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,194,255,0.6)] hover:scale-105">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                     <span class="relative text-[10px] font-black uppercase tracking-[0.2em] text-brand-bg">
                         QUERO ME INSCREVER
@@ -106,12 +82,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </nav>
+    </header>
 
+    <main>
     <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <picture>
                 <source media="(max-width: 767px)" srcset="./assets/MOBILE.webp" type="image/webp">
-                <img src="./assets/WEB.webp" alt="" class="w-full h-full object-cover opacity-30 md:opacity-30 hero-bg-img" width="1920" height="1080" fetchpriority="high">
+                <img src="./assets/WEB.webp" alt="Background da Pós-Graduação em Fisiologia do Exercício aplicada a Grupos Especiais da Personal Trainer Academy" class="w-full h-full object-cover opacity-30 md:opacity-30 hero-bg-img" width="1920" height="1080" fetchpriority="high">
             </picture>
             <div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent"></div>
         </div>
@@ -134,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </p>
 
                 <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#" data-open-lead-modal class="bg-brand-primary text-brand-bg font-black uppercase py-4 px-8 rounded hover:bg-cyan-400 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200">
+                    <a href="#hero" data-open-lead-modal class="bg-brand-primary text-brand-bg font-black uppercase py-4 px-8 rounded hover:bg-cyan-400 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200">
                         QUERO ME INSCREVER <i class="fas fa-arrow-right text-brand-bg"></i>
                     </a>
                 </div>
@@ -157,40 +135,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
                 <div class="flex gap-10 px-5">
-                    <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/9-r75tkctw100pso6at83ylcmffqjgt7fn8a8jv0q2e8.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/10-r75tkepkeo3afw3ki8x7qc5cmia78ln3wjjitkna1s.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/11-r75tkgl8sc5v340u79qgvbo9ta0xnzukksuhs4khpc.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/12-r75tkigx608fqby3wajq0b7701ro3e21925gqohpcw.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/15-r75tkp1shuhfzlojtve3zrjf5qv8l9s5lypv3m7y5c.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/16-r75tkqxgvik0mtltiw7d4r2ccilz0nzma80u2655sw.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/17-r75tkst596mla1j37x0m9ql9jacpg272yhbt0q2dgg.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/18-r75tkuotmup5x9gcwxtveq46q23fvgejmqmrz9zl40.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/9-r75tkctw100pso6at83ylcmffqjgt7fn8a8jv0q2e8.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/10-r75tkepkeo3afw3ki8x7qc5cmia78ln3wjjitkna1s.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/11-r75tkgl8sc5v340u79qgvbo9ta0xnzukksuhs4khpc.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/12-r75tkigx608fqby3wajq0b7701ro3e21925gqohpcw.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/15-r75tkp1shuhfzlojtve3zrjf5qv8l9s5lypv3m7y5c.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/16-r75tkqxgvik0mtltiw7d4r2ccilz0nzma80u2655sw.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/17-r75tkst596mla1j37x0m9ql9jacpg272yhbt0q2dgg.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/18-r75tkuotmup5x9gcwxtveq46q23fvgejmqmrz9zl40.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
                 </div>
                 <div class="flex gap-10 px-5">
-                    <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/9-r75tkctw100pso6at83ylcmffqjgt7fn8a8jv0q2e8.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/10-r75tkepkeo3afw3ki8x7qc5cmia78ln3wjjitkna1s.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/11-r75tkgl8sc5v340u79qgvbo9ta0xnzukksuhs4khpc.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/12-r75tkigx608fqby3wajq0b7701ro3e21925gqohpcw.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/15-r75tkp1shuhfzlojtve3zrjf5qv8l9s5lypv3m7y5c.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/16-r75tkqxgvik0mtltiw7d4r2ccilz0nzma80u2655sw.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/17-r75tkst596mla1j37x0m9ql9jacpg272yhbt0q2dgg.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
-                    <img src="./assets/professores/18-r75tkuotmup5x9gcwxtveq46q23fvgejmqmrz9zl40.webp" alt="Professor" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/9-r75tkctw100pso6at83ylcmffqjgt7fn8a8jv0q2e8.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/10-r75tkepkeo3afw3ki8x7qc5cmia78ln3wjjitkna1s.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/11-r75tkgl8sc5v340u79qgvbo9ta0xnzukksuhs4khpc.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/12-r75tkigx608fqby3wajq0b7701ro3e21925gqohpcw.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/15-r75tkp1shuhfzlojtve3zrjf5qv8l9s5lypv3m7y5c.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/16-r75tkqxgvik0mtltiw7d4r2ccilz0nzma80u2655sw.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/17-r75tkst596mla1j37x0m9ql9jacpg272yhbt0q2dgg.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
+                    <img src="./assets/professores/18-r75tkuotmup5x9gcwxtveq46q23fvgejmqmrz9zl40.webp" alt="Docente da Pós-Graduação em Fisiologia do Exercício da Personal Trainer Academy" loading="lazy" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10" width="240" height="380">
                 </div>
             </div>
         </div>
@@ -247,7 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <h3 class="text-3xl font-bold text-white mb-4">Método Especialista PRO</h3>
                         <p class="text-gray-400 text-base leading-relaxed mb-8">O método Especialista PRO, foi criado para que você aplique todo o conhecimento de forma prática, elevando sua credibilidade e aumentando seu faturamento.</p>
-                        <a href="#" data-open-lead-modal class="w-full bg-brand-primary text-brand-bg font-bold text-center py-4 rounded-full uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,194,255,0.6)] transition transform hover:-translate-y-1">
+                        <a href="#programa" data-open-lead-modal class="w-full bg-brand-primary text-brand-bg font-bold text-center py-4 rounded-full uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,194,255,0.6)] transition transform hover:-translate-y-1">
                             MATRICULE-SE AGORA
                         </a>
                     </div>
@@ -627,6 +605,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    </main>
+
     <div id="lead-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 modal-backdrop hidden" aria-hidden="true">
         <div class="bg-brand-surface border border-white/10 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
             <div class="flex items-center justify-between p-6 border-b border-white/5">
@@ -660,7 +640,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="modal-phone-prefix">+55</span>
                         <input type="tel" id="lead-telefone" name="telefone" required
                             class="modal-phone-input"
-                            placeholder="11 99999-9999" maxlength="15" inputmode="numeric" pattern="[0-9\s]*"
+                            placeholder="(11) 99999-9999" maxlength="16" inputmode="numeric"
                             title="DDD + número">
                     </div>
                     <p class="mt-1.5 text-xs text-gray-500">DDD + número (apenas números)</p>
@@ -673,6 +653,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <footer class="relative bg-[#02060d] pt-20 pb-10 border-t border-white/5 overflow-hidden" data-aos="fade">
+        <span id="termos" class="sr-only"></span>
+        <span id="privacidade" class="sr-only"></span>
         <div class="absolute bottom-0 left-0 w-full h-full bg-mesh opacity-20 pointer-events-none"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
@@ -681,7 +663,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         A maior referência em pós-graduação para Personal Trainers do Brasil. Formando especialistas e líderes de mercado.
                     </p>
-                    <a href="#" data-open-lead-modal class="inline-block bg-brand-primary text-brand-bg font-bold uppercase text-xs py-3 px-6 rounded-full hover:bg-cyan-400 transition">
+                    <a href="#matricula" data-open-lead-modal class="inline-block bg-brand-primary text-brand-bg font-bold uppercase text-xs py-3 px-6 rounded-full hover:bg-cyan-400 transition">
                         QUERO ALAVANCAR MINHA CARREIRA
                     </a>
                 </div>
@@ -698,8 +680,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="lg:col-span-2">
                     <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Políticas</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Termos de Uso</a></li>
-                        <li><a href="#" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Políticas de Privacidade</a></li>
+                        <li><a href="#termos" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Termos de Uso</a></li>
+                        <li><a href="#privacidade" class="hover:text-brand-primary hover:translate-x-2 transition-all duration-300 inline-block">Políticas de Privacidade</a></li>
                     </ul>
                 </div>
 
@@ -732,7 +714,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="cookie-lgpd-banner" class="fixed bottom-0 left-0 right-0 z-[90] hidden px-4 py-4 md:px-6 md:py-5 bg-brand-surface border-t border-white/10 shadow-[0_-4px_24px_rgba(0,0,0,0.4)]" role="dialog" aria-label="Aviso de cookies e privacidade">
         <div class="container mx-auto max-w-5xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <p class="text-gray-300 text-sm leading-relaxed flex-1">
-                Utilizamos cookies e dados pessoais de acordo com a <strong class="text-white">Lei Geral de Proteção de Dados (LGPD)</strong> para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#" class="text-brand-primary hover:underline font-medium">Política de Privacidade</a>.
+                Utilizamos cookies e dados pessoais de acordo com a <strong class="text-white">Lei Geral de Proteção de Dados (LGPD)</strong> para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#privacidade" class="text-brand-primary hover:underline font-medium">Política de Privacidade</a>.
             </p>
             <button type="button" id="cookie-lgpd-accept" class="shrink-0 bg-brand-primary text-brand-bg font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-lg hover:opacity-90 transition whitespace-nowrap">
                 Aceitar
@@ -833,8 +815,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             inputPhone.addEventListener('input', function () {
                 var v = this.value.replace(/\D/g, '');
-                if (v.length <= 2) this.value = v;
-                else this.value = v.slice(0, 2) + ' ' + v.slice(2, 7) + (v.length > 7 ? '-' + v.slice(7, 11) : '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length <= 2) {
+                    this.value = v ? '(' + v + ')' : v;
+                } else {
+                    this.value = '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + (v.length > 7 ? '-' + v.slice(7, 11) : '');
+                }
             });
 
             form.addEventListener('submit', function (e) {
