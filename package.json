@@ -7,6 +7,11 @@
     "build:css": "npx tailwindcss -i src/input.css -o dist/css/style.css --minify"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.0"
+    "cheerio": "latest",
+    "clean-css": "latest",
+    "html-minifier-terser": "latest",
+    "sharp": "latest",
+    "tailwindcss": "^3.4.0",
+    "terser": "latest"
   }
 }
