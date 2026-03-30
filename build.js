@@ -141,6 +141,24 @@ async function main() {
   const originalHtml = readText(IN_HTML_PATH);
   const $ = cheerio.load(originalHtml, { decodeEntities: false });
 
+  // 2.0) Extrair CSS inline para dist/css/style.css
+  let extractedCss = '';
+  $('style').each((_, el) => {
+    extractedCss += `${$(el).html() || ''}\n`;
+    $(el).remove();
+  });
+  if (extractedCss.trim()) {
+    const currentCss = readText(cssPath);
+    const mergedCss = `${currentCss}\n${extractedCss}`;
+    const mergedMinified = cleaner.minify(mergedCss);
+    writeText(cssPath, mergedMinified.styles || mergedCss);
+  }
+
+  // Garante que index.html referencie o CSS buildado.
+  if ($('link[href="css/style.css"]').length === 0) {
+    $('head').append('<link rel="stylesheet" href="css/style.css">');
+  }
+
   // 2.1) Canonical absoluto
   const canonicalTag = $('link[rel="canonical"]').first();
   if (canonicalTag.length) canonicalTag.attr('href', canonicalUrl);
