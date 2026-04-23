@@ -41,6 +41,7 @@
                     },
                     keyframes: {
                         shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
                             '100%': { transform: 'translateX(100%)' }
                         },
                         marquee: {
@@ -89,14 +90,12 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
     </style>
 </head>
 
 <body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFKWT7SP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 
     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 hidden md:block" data-aos="fade-down" data-aos-duration="1000"> 
         <div class="container mx-auto max-w-5xl"> 
@@ -134,8 +133,8 @@
         <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <picture>
-                    <source media="(max-width: 767px)" srcset="./assets/MOBILE.webp" type="image/webp">
-                    <img src="./assets/WEB.webp" alt="Background da Pós-Graduação" class="w-full h-full object-cover opacity-30 md:opacity-30 hero-bg-img" width="1920" height="1080" fetchpriority="high">
+                    <source media="(max-width: 767px)" srcset="./assets/CONTERATO-1.png" type="image/png">
+                    <img src="./assets/CONTERATO.png" alt="Background da Pós-Graduação" class="w-full h-full object-cover opacity-30 md:opacity-30 hero-bg-img" width="1920" height="1080" fetchpriority="high">
                 </picture>
                 <div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent"></div>
             </div>
@@ -600,7 +599,7 @@
         </section>
     </main>
 
-    <footer class="bg-brand-darkgray border-t border-white/5 pt-16 pb-24 relative z-20"> 
+    <footer class="bg-brand-darkgray border-t border-white/5 pt-16 relative z-20 pb-32"> 
         <div class="container mx-auto px-6"> 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12"> 
                 <div class="lg:col-span-4 space-y-4"> 
@@ -631,23 +630,27 @@
                 <div class="lg:col-span-2"> 
                     <h4 class="text-brand-textSecondary font-bold uppercase tracking-widest text-xs mb-6">Suporte</h4> 
                     <ul class="space-y-3 text-sm text-brand-textMuted"> 
-                        <li><a href="#" class="hover:text-brand-success flex items-center gap-2 transition-colors"><i class="fab fa-whatsapp"></i> WhatsApp Suporte</a></li> 
+                        <li><a href="https://wa.me/5541988239396" target="_blank" rel="noopener noreferrer" class="hover:text-brand-success flex items-center gap-2 transition-colors"><i class="fab fa-whatsapp"></i> WhatsApp Suporte</a></li> 
+                        <li><a href="tel:+554198823-9396" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-phone-alt text-brand-success"></i> (41) 98823-9396</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">contato@pta.com.br</a></li> 
                     </ul> 
                 </div> 
             </div> 
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"> 
-                <p class="text-brand-textMuted text-xs"> 
-                    &copy; 2026 Personal Trainer Academy. Todos os direitos reservados. 
-                </p> 
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-center md:text-left">
+                    <p class="text-brand-textMuted text-xs"> 
+                        &copy; 2026 Personal Trainer Academy. Todos os direitos reservados. 
+                    </p>
+                    <span class="hidden sm:inline text-brand-textMuted/60" aria-hidden="true">·</span>
+                    <a href="tel:+554198823-9396" class="text-brand-textMuted text-xs hover:text-white transition-colors">Suporte: (41) 98823-9396</a>
+                </div>
                 <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-textMuted"> 
                     <span class="w-2 h-2 rounded-full bg-brand-success animate-pulse"></span> Ambiente 100% Seguro 
                 </div> 
             </div> 
         </div> 
     </footer>
-
-    <div id="popup-captura" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-[#05050A]/90 backdrop-blur-xl" aria-hidden="true">
+<div id="popup-captura" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-[#05050A]/90 backdrop-blur-xl" aria-hidden="true">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
         <div class="relative bg-brand-surface border border-white/10 rounded-3xl shadow-[0_0_80px_rgba(0,194,255,0.15)] max-w-md w-full p-8 md:p-10 animate-[fadeIn_0.3s_ease-out]">
             <button type="button" onclick="fecharPopup()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-brand-primary hover:text-white flex items-center justify-center text-gray-400 transition-all duration-300" aria-label="Fechar">
@@ -675,101 +678,14 @@
                     </div>
                     <p class="error-msg text-red-400 text-xs mt-1 hidden">Informe o DDD e o número completo.</p>
                 </div>
+                <input type="hidden" id="utm_source" name="utm_source" value="">
+                <input type="hidden" id="utm_term" name="utm_term" value="">
+                <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+                <input type="hidden" id="utm_medium" name="utm_medium" value="">
+                <input type="hidden" id="utm_content" name="utm_content" value="">
+                <input type="hidden" id="url" name="url" value="">
                 <button type="submit" class="w-full bg-brand-primary text-white font-sans font-bold py-4 rounded-xl uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,194,255,0.6)] transition btn-submit mt-2">
                     Avançar para Pagamento
-                </button>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Faixa Verde - Mês do Consumidor -->
-    <div id="faixa-consumidor" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: linear-gradient(90deg, #00D26A 0%, #05994A 100%); padding: 0.75rem 1rem; box-shadow: 0 -10px 25px -5px rgba(0, 210, 106, 0.3); border-top: 1px solid rgba(255, 255, 255, 0.2);">
-        <div id="faixa-container" style="max-width: 1300px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem;">
-            <div id="faixa-text-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; width: 100%;">
-                <span style="background-color: #13130F; color: #00D26A; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 9999px; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 0.3rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); white-space: nowrap;">
-                    <i class="fas fa-calendar-alt"></i> DURANTE TODO O MÊS
-                </span>
-                <p style="color: #13130F; font-weight: 800; font-size: 0.75rem; text-align: center; margin: 0; line-height: 1.4; font-family: Inter, sans-serif; white-space: normal;">
-                    MÊS DO CONSUMIDOR <span style="font-weight: 500; opacity: 0.7; margin: 0 0.2rem;">|</span> MAIS DE 20% OFF NA PÓS
-                </p>
-            </div>
-
-            <button type="button" onclick="abrirPopupVerde(); return false;" style="background-color: #13130F; color: #00D26A; font-weight: 800; font-family: Inter, sans-serif; padding: 0.6rem 1.5rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: all 200ms; white-space: nowrap; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; width: 100%; justify-content: center;">
-                <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i> Acesso Antecipado
-            </button>
-        </div>
-    </div>
-    
-    <style>
-        @media (min-width: 768px) {
-            #faixa-container {
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                align-items: center !important;
-                gap: 1.5rem !important;
-            }
-            #faixa-text-container {
-                flex-direction: row !important;
-                align-items: center !important;
-                gap: 1rem !important;
-                width: auto !important;
-            }
-            #faixa-text-container p {
-                font-size: 0.875rem !important;
-                white-space: nowrap !important;
-                text-align: left !important;
-            }
-            #faixa-consumidor button {
-                width: auto !important;
-            }
-        }
-    </style>
-
-    <!-- Popup Verde - Mês do Consumidor -->
-    <div id="popup-verde" style="position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 1rem; background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px); opacity: 0; transition: opacity 500ms ease-out;" aria-hidden="true">
-        <div style="position: relative; background-color: rgb(26, 26, 26); border: 2px solid #00D26A; border-radius: 1rem; max-width: 42rem; width: 100%; padding: 2.5rem; transform: scale(0.95); transition: all 500ms ease-out; box-shadow: 0 0 20px rgba(0, 210, 106, 0.5), 0 0 40px rgba(0, 210, 106, 0.3), 0 0 60px rgba(0, 210, 106, 0.2), inset 0 0 20px rgba(0, 210, 106, 0.1);">
-            <button type="button" id="popup-fechar-verde" style="position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border-radius: 9999px; background-color: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: rgb(156, 163, 175); border: none; cursor: pointer; transition: all 200ms;" onmouseover="this.style.backgroundColor='rgba(0, 210, 106, 0.2)'; this.style.color='white';" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'; this.style.color='rgb(156, 163, 175)';" aria-label="Fechar">
-                <i class="fas fa-times"></i>
-            </button>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <img src="assets/logo-consumidor.svg" alt="Mês do Consumidor" style="max-width: 200px; height: auto; margin: 0 auto 1rem;">
-            </div>
-            <h3 style="font-family: Inter, sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; text-align: center;">Preencha seus dados</h3>
-            <div style="background-color: rgba(0, 210, 106, 0.1); border-left: 3px solid #00D26A; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 0.5rem;">
-                <p style="color: rgb(209, 213, 219); font-size: 0.9375rem; line-height: 1.6; margin: 0 0 0.75rem 0;">
-                    <strong style="color: #00D26A;">Mês do Consumidor da Educação Física</strong><br>
-                    Durante todo o mês de março
-                </p>
-                <p style="color: rgb(209, 213, 219); font-size: 0.9375rem; line-height: 1.6; margin: 0;">
-                    <strong style="color: white;">Mais de 20% de desconto</strong> na sua pós-graduação. Entre no grupo VIP e receba acesso antecipado.
-                </p>
-            </div>
-            <form id="form_fe" data-product="FE3-SC" style="margin-top: 1.5rem;">
-                <input type="hidden" name="utm_source" class="lead-utm" data-utm="utm_source" value="">
-                <input type="hidden" name="utm_term" class="lead-utm" data-utm="utm_term" value="">
-                <input type="hidden" name="utm_campaign" class="lead-utm" data-utm="utm_campaign" value="">
-                <input type="hidden" name="utm_medium" class="lead-utm" data-utm="utm_medium" value="">
-                <input type="hidden" name="utm_content" class="lead-utm" data-utm="utm_content" value="">
-                <input type="hidden" name="url" class="lead-utm" data-utm="url" value="">
-                
-                <div style="margin-bottom: 1rem;">
-                    <label for="lead-nome-verde" style="display: block; font-size: 0.875rem; font-weight: 500; color: rgb(209, 213, 219); margin-bottom: 0.375rem;">Nome completo</label>
-                    <input type="text" id="lead-nome-verde" name="nome" required placeholder="Seu nome" style="width: 100%; padding: 0.875rem 1rem; border-radius: 0.75rem; background-color: rgb(3, 9, 18); border: 1px solid rgba(255, 255, 255, 0.1); color: white; font-size: 0.875rem; outline: none; transition: border-color 200ms;" onfocus="this.style.borderColor='#00D26A'; this.style.boxShadow='0 0 0 1px #00D26A';" onblur="this.style.borderColor='rgba(255, 255, 255, 0.1)'; this.style.boxShadow='none';">
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <label for="lead-email-verde" style="display: block; font-size: 0.875rem; font-weight: 500; color: rgb(209, 213, 219); margin-bottom: 0.375rem;">E-mail principal</label>
-                    <input type="email" id="lead-email-verde" name="email" required placeholder="seu@email.com" style="width: 100%; padding: 0.875rem 1rem; border-radius: 0.75rem; background-color: rgb(3, 9, 18); border: 1px solid rgba(255, 255, 255, 0.1); color: white; font-size: 0.875rem; outline: none; transition: border-color 200ms;" onfocus="this.style.borderColor='#00D26A'; this.style.boxShadow='0 0 0 1px #00D26A';" onblur="this.style.borderColor='rgba(255, 255, 255, 0.1)'; this.style.boxShadow='none';">
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <label for="lead-phone-verde" style="display: block; font-size: 0.875rem; font-weight: 500; color: rgb(209, 213, 219); margin-bottom: 0.375rem;">WhatsApp</label>
-                    <div style="display: flex; border-radius: 0.75rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background-color: rgb(3, 9, 18);" onfocusin="this.style.borderColor='#00D26A'; this.style.boxShadow='0 0 0 1px #00D26A';" onfocusout="this.style.borderColor='rgba(255, 255, 255, 0.1)'; this.style.boxShadow='none';">
-                        <span style="display: inline-flex; align-items: center; padding: 0.875rem 1rem; background-color: #00D26A; color: black; font-weight: 900; user-select: none; flex-shrink: 0;">+55</span>
-                        <input type="text" id="lead-phone-verde" name="telefone" required placeholder="(11) 99999-9999" inputmode="numeric" maxlength="15" class="lead-phone mask-telefone" style="flex: 1; padding: 0.875rem 1rem; background-color: transparent; border: none; color: white; font-size: 0.875rem; outline: none; min-width: 0;">
-                    </div>
-                    <p class="lead-phone-err" style="color: rgb(248, 113, 113); font-size: 0.75rem; margin-top: 0.5rem; display: none; font-weight: 500;">Informe o DDD e o número completo.</p>
-                </div>
-                <button type="submit" style="width: 100%; background-color: #00D26A; color: black; font-family: Inter, sans-serif; font-weight: 900; padding: 1rem; margin-top: 1rem; border-radius: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; transition: all 200ms; box-shadow: 0 0 20px rgba(0, 210, 106, 0.4);" onmouseover="this.style.backgroundColor='#05B147'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='#00D26A'; this.style.transform='translateY(0)';" class="btn-submit">
-                    Acesso Antecipado
                 </button>
             </form>
         </div>
@@ -801,40 +717,8 @@
             if (e.key === 'Escape') fecharPopup();
         });
 
-        // 3. Controle Modal Verde + Barra Bottom
-        const modalVerde = document.getElementById('popup-verde');
-        function abrirPopupVerde() {
-            if (!modalVerde) return;
-            modalVerde.style.display = 'flex';
-            modalVerde.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    modalVerde.style.opacity = '1';
-                    const content = modalVerde.querySelector('div');
-                    if (content) content.style.transform = 'scale(1)';
-                });
-            });
-        }
-        function fecharPopupVerde() {
-            if (!modalVerde) return;
-            modalVerde.style.opacity = '0';
-            const content = modalVerde.querySelector('div');
-            if (content) content.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                modalVerde.style.display = 'none';
-                modalVerde.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }, 500);
-        }
-        modalVerde.addEventListener('click', (e) => {
-            if (e.target === modalVerde) fecharPopupVerde();
-        });
-        document.getElementById('popup-fechar-verde')?.addEventListener('click', fecharPopupVerde);
-
-        // 4. Máscara de Telefone Rigorosa
+        // 3. Máscara de Telefone Rigorosa
         const telInput = document.getElementById('lead-phone');
-        const telInputVerde = document.getElementById('lead-phone-verde');
         telInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.startsWith('55') && value.length > 2) value = value.slice(2);
@@ -849,21 +733,8 @@
             const errorMsg = document.querySelector('.error-msg');
             if (errorMsg) errorMsg.classList.add('hidden');
         });
-        telInputVerde.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.startsWith('55') && value.length > 2) value = value.slice(2);
-            value = value.slice(0, 11);
 
-            let formatado = value;
-            if (value.length > 2) formatado = `(${value.slice(0, 2)}) ` + value.slice(2);
-            if (value.length > 7) formatado = formatado.slice(0, 10) + '-' + formatado.slice(10);
-
-            e.target.value = formatado;
-            const errorMsg = document.querySelector('#popup-verde .lead-phone-err');
-            if (errorMsg) errorMsg.style.display = 'none';
-        });
-
-        // 5. Captura UTMs da URL
+        // 4. Captura UTMs da URL
         function obterUTMs() {
             const params = new URLSearchParams(window.location.search);
             return {
@@ -875,8 +746,25 @@
             };
         }
 
-        // 6. Envio do Formulário (Webhook + Redirect Fallback)
+        function preencherCamposTracking() {
+            const utms = obterUTMs();
+            const uSource = document.getElementById('utm_source');
+            const uTerm = document.getElementById('utm_term');
+            const uCampaign = document.getElementById('utm_campaign');
+            const uMedium = document.getElementById('utm_medium');
+            const uContent = document.getElementById('utm_content');
+            const urlInput = document.getElementById('url');
+            if (uSource) uSource.value = utms.utm_source || '';
+            if (uTerm) uTerm.value = utms.utm_term || '';
+            if (uCampaign) uCampaign.value = utms.utm_campaign || '';
+            if (uMedium) uMedium.value = utms.utm_medium || '';
+            if (uContent) uContent.value = utms.utm_content || '';
+            if (urlInput) urlInput.value = window.location.href;
+        }
+
+        // 5. Envio do Formulário (Webhook + Redirect Fallback)
         const form = document.getElementById('form_fe');
+        preencherCamposTracking();
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -895,24 +783,24 @@
 
             const nome = document.getElementById('lead-nome').value.trim();
             const email = document.getElementById('lead-email').value.trim();
-            const telefoneFormatado = '+55' + rawPhone;
-            const urlAtual = window.location.href;
-            const utms = obterUTMs();
+            let telefone = rawPhone;
+            telefone = '+55' + telefone;
+            const urlInput = document.getElementById('url');
+            if (urlInput) urlInput.value = window.location.href;
 
             const payload = {
                 nome: nome,
                 email: email,
-                telefone: telefoneFormatado,
-                utm_source: utms.utm_source,
-                utm_medium: utms.utm_medium,
-                utm_campaign: utms.utm_campaign,
-                utm_term: utms.utm_term,
-                utm_content: utms.utm_content,
-                url: urlAtual,
-                produto: "Fisiologia do Exercicio"
+                telefone: telefone,
+                utm_source: document.getElementById('utm_source')?.value || '',
+                utm_term: document.getElementById('utm_term')?.value || '',
+                utm_campaign: document.getElementById('utm_campaign')?.value || '',
+                utm_medium: document.getElementById('utm_medium')?.value || '',
+                utm_content: document.getElementById('utm_content')?.value || '',
+                url: document.getElementById('url')?.value || window.location.href
             };
 
-            const WEBHOOK_URL = 'https://hook.us1.make.com/4n42ngpte48fu0mvpnh5ewi4vu3ddah4?produto=FE3';
+            const WEBHOOK_URL = 'https://hook.us1.make.com/bhigavwc6bfhskmnicov25r6jv9fnt1p?produto=FE3';
             const BASE_REDIRECT_URL = 'https://pos.personaltraineracademy.com.br/obg-obrigado-fisio/';
 
             try {
@@ -927,59 +815,41 @@
                 window.location.href = BASE_REDIRECT_URL;
             }
         });
-
-        // 7. Envio do Formulario Verde (mesmo webhook/redirect)
-        const formVerde = document.querySelector('#popup-verde form[id="form_fe"]');
-        formVerde.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const btnSubmit = this.querySelector('.btn-submit');
-            const errorMsg = this.querySelector('.lead-phone-err');
-
-            const rawPhone = telInputVerde.value.replace(/\D/g, '');
-            if (rawPhone.length < 10) {
-                errorMsg.style.display = 'block';
-                telInputVerde.focus();
-                return;
-            }
-
-            btnSubmit.disabled = true;
-            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processando...';
-
-            const nome = document.getElementById('lead-nome-verde').value.trim();
-            const email = document.getElementById('lead-email-verde').value.trim();
-            const telefoneFormatado = '+55' + rawPhone;
-            const urlAtual = window.location.href;
-            const utms = obterUTMs();
-
-            const payload = {
-                nome: nome,
-                email: email,
-                telefone: telefoneFormatado,
-                utm_source: utms.utm_source,
-                utm_medium: utms.utm_medium,
-                utm_campaign: utms.utm_campaign,
-                utm_term: utms.utm_term,
-                utm_content: utms.utm_content,
-                url: urlAtual,
-                produto: "Fisiologia do Exercicio"
-            };
-
-            const WEBHOOK_URL = 'https://hook.us1.make.com/4n42ngpte48fu0mvpnh5ewi4vu3ddah4?produto=FE3';
-            const BASE_REDIRECT_URL = 'https://pos.personaltraineracademy.com.br/obg-obrigado-fisio/';
-
-            try {
-                await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-            } catch (error) {
-                console.error("Webhook verde falhou, executando fallback...", error);
-            } finally {
-                window.location.href = BASE_REDIRECT_URL;
-            }
-        });
     </script>
+
+<style id="estilo-faixa-copa">
+    #faixa-copa { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999; background-color: #16a34a; border-top: 1px solid rgba(74, 222, 128, 0.5); box-shadow: 0 -10px 40px rgba(22, 163, 74, 0.4); overflow: hidden; font-family: 'Inter', sans-serif; }
+    #faixa-copa-fx { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transform: translateX(-100%); animation: shimmerCopa 3s infinite; }
+    #faixa-copa-content { display: flex; align-items: center; justify-content: center; padding: 12px 16px; position: relative; gap: 12px; flex-direction: column; }
+    #faixa-copa-text { color: #ffffff; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 0; line-height: 1.4; }
+    #faixa-copa-highlight { color: #fde047; font-weight: 900; }
+    #faixa-copa-pulse { color: #bbf7d0; font-weight: 800; animation: pulseCopa 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    #faixa-copa-btn { background-color: #ffffff; color: #15803d; font-weight: 900; font-size: 11px; padding: 10px 24px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; border: none; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease; white-space: nowrap; flex-shrink: 0; margin: 0; }
+    #faixa-copa-btn:hover { transform: scale(1.05); }
+    .faixa-copa-separator { display: none; opacity: 0.5; margin: 0 4px; }
+    @keyframes pulseCopa { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    @keyframes shimmerCopa { 100% { transform: translateX(100%); } }
+    
+    /* Regra para manter em uma única linha no Desktop */
+    @media (min-width: 768px) {
+        #faixa-copa-content { flex-direction: row; gap: 24px; }
+        #faixa-copa-text { flex-direction: row; font-size: 14px; white-space: nowrap; }
+        .faixa-copa-separator { display: inline; }
+    }
+</style>
+
+<div id="faixa-copa">
+    <div id="faixa-copa-fx"></div>
+    <div id="faixa-copa-content">
+        <p id="faixa-copa-text">
+            <span>Matricule-se e garanta a <strong id="faixa-copa-highlight">camisa oficial do Time de Especialistas</strong></span>
+            <span class="faixa-copa-separator">|</span>
+            <span id="faixa-copa-pulse">EDIÇÃO LIMITADA</span>
+        </p>
+        <button type="button" id="faixa-copa-btn" onclick="abrirPopup(); return false;">
+            Garantir Minha Camisa
+        </button>
+    </div>
+</div>
 </body>
 </html>
