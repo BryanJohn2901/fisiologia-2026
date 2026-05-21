@@ -98,6 +98,19 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        .professors-marquee { cursor: grab; user-select: none; touch-action: pan-y; }
+        .professors-marquee.dragging { cursor: grabbing; }
+        .professors-track { will-change: transform; }
+        @media (max-width: 767px) {
+            .professors-marquee { overflow-x: auto !important; overflow-y: hidden !important; scroll-snap-type: x mandatory; cursor: default; touch-action: auto; -webkit-overflow-scrolling: touch; }
+            .professors-marquee.dragging { cursor: default; }
+            .professors-track { transform: none !important; }
+            #professors-track > [aria-hidden="true"] { display: none; }
+            #professors-track > [data-professors-group] { padding-left: 0 !important; padding-right: 0 !important; gap: 8px !important; }
+            #professors-track > [data-professors-group] > img { scroll-snap-align: start; width: calc(50vw - 6px) !important; max-width: calc(50vw - 6px) !important; height: auto !important; flex-shrink: 0; }
+            #professors-track > [data-professors-group] > div { scroll-snap-align: start; width: calc(50vw - 6px) !important; max-width: calc(50vw - 6px) !important; height: auto !important; flex-shrink: 0; }
+            #professors-track > [data-professors-group] > div img { width: 100% !important; max-width: 100% !important; height: auto !important; }
+        }
     </style>
 
     <style id="estilo-faixa-copa">
@@ -287,30 +300,46 @@
                     Uma equipe de <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-brand-primary">profissionais especializados</span> que irão te guiar no caminho do sucesso.
                 </h2>
             </div>
-            <div class="relative w-full overflow-hidden py-6" data-aos="fade-in">
+            <div id="professors-marquee" class="professors-marquee relative w-full overflow-hidden py-6" data-aos="fade-in">
                 <div class="absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-brand-bg to-transparent pointer-events-none"></div>
                 <div class="absolute inset-y-0 right-0 w-32 z-10 bg-gradient-to-l from-brand-bg to-transparent pointer-events-none"></div>
 
-                <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
-                    <div class="flex gap-10 px-5">
-                        <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                <div id="professors-track" class="professors-track flex w-max">
+                    <div class="flex gap-10 px-5" data-professors-group>
+                        <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/9-r75tkctw100pso6at83ylcmffqjgt7fn8a8jv0q2e8.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/10-r75tkepkeo3afw3ki8x7qc5cmia78ln3wjjitkna1s.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/11-r75tkgl8sc5v340u79qgvbo9ta0xnzukksuhs4khpc.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/12-r75tkigx608fqby3wajq0b7701ro3e21925gqohpcw.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/15-r75tkp1shuhfzlojtve3zrjf5qv8l9s5lypv3m7y5c.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/16-r75tkqxgvik0mtltiw7d4r2ccilz0nzma80u2655sw.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/17-r75tkst596mla1j37x0m9ql9jacpg272yhbt0q2dgg.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/18-r75tkuotmup5x9gcwxtveq46q23fvgejmqmrz9zl40.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
                     </div>
-                    <div class="flex gap-10 px-5">
-                        <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
-                        <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Docente" class="h-[380px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                    <div class="flex gap-10 px-5" aria-hidden="true">
+                        <img src="./assets/professores/1-r75tjyqb6hheyiqs3k0k1y6iiygylqvo6cg9nvayzk.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/2-r75tk0lzk5jzlqo1sktt6xpfpq7p1534ulr8mf86n4.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/3-r75tk2hnxtmk8ylbhln2bx8cwhyfgjaliv27kz5eao.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/4-r75tk4dcbhp4w6il6mgbgwra39p5vxi274d6jj2ly8.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/5-r75tk5b6ibqf7sh814uy1eiqonkj3mlsj90o0t17s0.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/6-r75tk76uvzszv0ehq5o76e1nvfb9j0t97ibmzcyffk.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/7-r75tk92j9nvki8brf6hgbdkl271zyf0pvrmlxwvn34.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/8-r75tkay7nby55g9147apgd3i8ysqdt86k0xkwgsuqo.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/9-r75tkctw100pso6at83ylcmffqjgt7fn8a8jv0q2e8.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/10-r75tkepkeo3afw3ki8x7qc5cmia78ln3wjjitkna1s.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/11-r75tkgl8sc5v340u79qgvbo9ta0xnzukksuhs4khpc.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/12-r75tkigx608fqby3wajq0b7701ro3e21925gqohpcw.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/15-r75tkp1shuhfzlojtve3zrjf5qv8l9s5lypv3m7y5c.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/16-r75tkqxgvik0mtltiw7d4r2ccilz0nzma80u2655sw.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/17-r75tkst596mla1j37x0m9ql9jacpg272yhbt0q2dgg.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
+                        <img src="./assets/professores/18-r75tkuotmup5x9gcwxtveq46q23fvgejmqmrz9zl40.webp" alt="Docente" class="h-[480px] w-auto object-contain transition-transform hover:scale-105 rounded-xl border border-brand-primary/30 shadow-lg shadow-brand-primary/10">
                     </div>
                 </div>
             </div>
@@ -934,10 +963,21 @@
             const BASE_REDIRECT_URL = 'https://wa.me/554195999211?text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20p%C3%B3s%20em%20fisiologia%20do%20exerc%C3%ADcio';
 
             try {
-                await fetch(WEBHOOK_URL, {
+                const webhookUrl = new URL(WEBHOOK_URL);
+                webhookUrl.searchParams.set('nome', payload.nome);
+                webhookUrl.searchParams.set('email', payload.email);
+                webhookUrl.searchParams.set('telefone', payload.telefone);
+                webhookUrl.searchParams.set('utm_source', payload.utm_source);
+                webhookUrl.searchParams.set('utm_term', payload.utm_term);
+                webhookUrl.searchParams.set('utm_campaign', payload.utm_campaign);
+                webhookUrl.searchParams.set('utm_medium', payload.utm_medium);
+                webhookUrl.searchParams.set('utm_content', payload.utm_content);
+                webhookUrl.searchParams.set('url', payload.url);
+
+                await fetch(webhookUrl.toString(), {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    mode: 'no-cors',
+                    keepalive: true
                 });
             } catch (error) {
                 console.error("Webhook falhou, executando fallback...", error);
@@ -945,6 +985,65 @@
                 window.location.href = BASE_REDIRECT_URL;
             }
         });
+
+        (function () {
+            var marquee = document.getElementById('professors-marquee');
+            var track = document.getElementById('professors-track');
+            var group = track && track.querySelector('[data-professors-group]');
+            if (!marquee || !track || !group) return;
+            var AUTO_SPEED = 96, MOBILE_INTERVAL = 3000, MOBILE_BP = 768;
+            var currentX = 0, groupWidth = 0, lastTs = 0;
+            var isDragging = false, isHovered = false;
+            var dragStartX = 0, dragStartTrackX = 0;
+            var rafId = null, mobileTimer = null;
+            var mobileIdx = 0, mobileItems = [];
+            var isMobile = window.innerWidth < MOBILE_BP;
+
+            function wrap() { while (currentX <= -groupWidth) currentX += groupWidth; while (currentX > 0) currentX -= groupWidth; }
+            function render() { wrap(); track.style.transform = 'translate3d(' + currentX + 'px,0,0)'; }
+            function measure() { groupWidth = group.offsetWidth; render(); }
+            function startDrag(cx) { isDragging = true; dragStartX = cx; dragStartTrackX = currentX; marquee.classList.add('dragging'); }
+            function moveDrag(cx) { if (!isDragging) return; currentX = dragStartTrackX + (cx - dragStartX); render(); }
+            function endDrag() { if (!isDragging) return; isDragging = false; marquee.classList.remove('dragging'); }
+            function tick(ts) {
+                if (!isMobile && !isDragging && !isHovered && groupWidth > 0) {
+                    if (lastTs > 0) { currentX -= AUTO_SPEED * (ts - lastTs) / 1000; render(); }
+                }
+                lastTs = ts; rafId = requestAnimationFrame(tick);
+            }
+            function scrollToMobileItem(idx) {
+                var el = mobileItems[idx]; if (!el) return;
+                var cr = marquee.getBoundingClientRect(), er = el.getBoundingClientRect();
+                var targetLeft = Math.round(er.left - cr.left + marquee.scrollLeft);
+                if (targetLeft <= marquee.scrollLeft) { marquee.scrollLeft = targetLeft; } else { marquee.scrollTo({ left: targetLeft, behavior: 'smooth' }); }
+            }
+            function startMobileAuto() {
+                clearInterval(mobileTimer);
+                mobileTimer = setInterval(function () {
+                    if (!isHovered) { mobileIdx = (mobileIdx + 2) % mobileItems.length; scrollToMobileItem(mobileIdx); }
+                }, MOBILE_INTERVAL);
+            }
+            function setupDesktop() { isMobile = false; clearInterval(mobileTimer); lastTs = 0; measure(); }
+            function setupMobile() { isMobile = true; track.style.transform = 'none'; mobileItems = Array.from(group.children); mobileIdx = 0; marquee.scrollLeft = 0; startMobileAuto(); }
+            marquee.addEventListener('mouseenter', function () { isHovered = true; });
+            marquee.addEventListener('mouseleave', function () { isHovered = false; endDrag(); });
+            marquee.addEventListener('mousedown', function (e) { if (!isMobile) startDrag(e.clientX); });
+            window.addEventListener('mousemove', function (e) { if (!isMobile) moveDrag(e.clientX); });
+            window.addEventListener('mouseup', function () { if (!isMobile) endDrag(); });
+            marquee.addEventListener('touchstart', function (e) { if (e.touches.length === 1 && !isMobile) startDrag(e.touches[0].clientX); }, { passive: true });
+            marquee.addEventListener('touchmove', function (e) { if (e.touches.length === 1 && !isMobile) moveDrag(e.touches[0].clientX); }, { passive: true });
+            marquee.addEventListener('touchend', function () { if (!isMobile) endDrag(); });
+            marquee.addEventListener('wheel', function (e) { if (!isMobile) { currentX -= e.deltaX || e.deltaY; render(); } }, { passive: true });
+            marquee.addEventListener('dragstart', function (e) { e.preventDefault(); });
+            window.addEventListener('resize', function () {
+                var nowMobile = window.innerWidth < MOBILE_BP;
+                if (nowMobile !== isMobile) { if (nowMobile) setupMobile(); else setupDesktop(); }
+                else if (!isMobile) measure();
+            });
+            if (isMobile) setupMobile(); else setupDesktop();
+            rafId = requestAnimationFrame(tick);
+            window.addEventListener('beforeunload', function () { cancelAnimationFrame(rafId); clearInterval(mobileTimer); });
+        })();
     </script>
 </body>
 </html>
