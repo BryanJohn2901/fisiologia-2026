@@ -105,7 +105,7 @@ async function maybeOptimizeAssets() {
 }
 
 async function main() {
-  const canonicalUrl = 'https://pos.personaltraineracademy.com.br/';
+  const canonicalUrl = 'https://pos.personaltraineracademy.com.br/fisiologia/';
 
   const cheerio = safeRequire('cheerio');
   const htmlMinifier = safeRequire('html-minifier-terser');
