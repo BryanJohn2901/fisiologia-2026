@@ -3,6 +3,17 @@ module.exports = {
   content: ['./index.html'],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: '1.5rem',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1300px',
+          '2xl': '1300px',
+        },
+      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },

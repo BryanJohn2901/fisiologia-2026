@@ -235,6 +235,12 @@ async function main() {
     if (href) $(el).attr('href', href.replace('./assets/', 'assets/'));
   });
 
+  // 2.4.1) Remove o CDN do Tailwind em produção: o CSS já foi compilado em
+  // css/style.css acima, então manter o <script src="cdn.tailwindcss.com">
+  // é redundante, gera uma chamada de rede extra e dispara o aviso
+  // "should not be used in production" no console do site publicado.
+  $('script[src="https://cdn.tailwindcss.com"]').remove();
+
   // 2.5) Extrair scripts inline NÃO-3RD-PARTY (evita mexer no GTM).
   const scriptTags = $('script').toArray();
   let extracted = '';
@@ -251,10 +257,16 @@ async function main() {
       code.includes('GTM-') ||
       code.includes('dataLayer');
 
-    // Tailwind config precisa ficar no HTML para preservar o comportamento do CDN.
+    // Config do Tailwind só é necessária junto do CDN (que foi removido acima
+    // para produção); com o CSS já compilado, este bloco pode ser descartado.
     const isTailwindConfig = code.includes('tailwind.config');
 
-    if (isGtm || isTailwindConfig) continue;
+    if (isGtm) continue;
+
+    if (isTailwindConfig) {
+      node.remove();
+      continue;
+    }
 
     extracted += `${code}\n`;
     extractedCount += 1;

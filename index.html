@@ -16,6 +16,17 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    container: {
+                        center: true,
+                        padding: '1.5rem',
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1300px',
+                            '2xl': '1300px',
+                        },
+                    },
                     colors: {
                         brand: {
                             bg: '#05050A',        
@@ -54,7 +65,7 @@
         }
     </script>
 
-    <link rel="preload" href="./assets/WEB.webp" as="image">
+    <link rel="preload" href="./assets/FISIO-WEB.webp" as="image">
     <link rel="preload" href="./assets/logo.svg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,15 +126,15 @@
 
     </head>
 
-<body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white pt-10 md:pt-0 pb-24 md:pb-20 overflow-x-hidden">
+<body class="bg-brand-bg text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-white pb-24 md:pb-20 overflow-x-hidden">
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFKWT7SP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 hidden md:block" data-aos="fade-down" data-aos-duration="1000"> 
-        <div class="container mx-auto max-w-5xl"> 
+        <div class="container mx-auto max-w-[1300px]"> 
             <div class="relative flex items-center justify-between px-6 py-3 rounded-full glass-strong shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] transition-all duration-300 hover:border-brand-primary/40 hover:shadow-[0_12px_40px_0_rgba(0,194,255,0.15)]"> 
                 <a href="#hero" class="block hover:opacity-80 transition-opacity duration-300 flex items-center shrink-0"> 
-                    <img src="./assets/logo.svg" alt="LOGO" class="h-10 w-auto"> 
+                    <img src="./assets/logoPTA.svg" alt="Personal Trainer Academy" class="h-10 md:h-12 w-auto"> 
                 </a> 
                 <div class="hidden md:flex items-center gap-8"> 
                     <a href="#programa" class="text-xs font-bold uppercase tracking-[0.1em] text-brand-textMuted hover:text-white transition-colors duration-300 relative group"> 
@@ -152,39 +163,44 @@
     </nav>
 
     <main>
-        <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <picture>
-                    <source media="(max-width: 767px)" srcset="./assets/CONTERATO-1.png" type="image/png">
-                    <img src="./assets/CONTERATO.png" alt="Background da Pós-Graduação" class="w-full h-full object-cover opacity-30 md:opacity-30 hero-bg-img" width="1920" height="1080" fetchpriority="high">
+        <section id="hero" class="relative overflow-hidden bg-brand-bg md:min-h-screen md:pt-32 md:pb-20 md:flex md:items-center">
+            <div class="relative w-full md:absolute md:inset-0 md:z-0">
+                <picture class="block w-full">
+                    <source media="(max-width: 767px)" srcset="./assets/FISIO-MOBILE.webp" type="image/webp">
+                    <img src="./assets/FISIO-WEB.webp" alt="Background da Pós-Graduação" class="block w-full h-auto object-cover object-top md:absolute md:inset-0 md:h-full md:object-right md:object-center hero-bg-img" width="1920" height="1080" fetchpriority="high">
                 </picture>
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-36 sm:h-44 bg-gradient-to-t from-brand-bg from-[20%] via-brand-bg/80 to-transparent md:inset-0 md:h-auto md:bg-gradient-to-r md:from-brand-bg md:from-[28%] md:via-brand-bg/70 md:via-[48%] md:to-transparent"></div>
             </div>
 
-            <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+            <div class="hidden md:block absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
 
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="max-w-3xl space-y-6">
-                    <div data-aos="fade-up" data-aos-delay="0" class="inline-flex items-center gap-2 px-3 py-1 rounded border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
-                        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Reconhecida pelo MEC
-                    </div>
+            <div class="relative z-10 bg-brand-bg pt-6 pb-16 md:mt-0 md:w-full md:bg-transparent md:pt-0 md:pb-0">
+                <div class="container mx-auto max-w-[1300px] px-6">
+                    <div class="max-w-xl xl:max-w-2xl space-y-6 max-md:mx-auto max-md:flex max-md:flex-col max-md:items-center max-md:text-center">
+                        <div data-aos="fade-up" data-aos-delay="0" class="pt-2">
+                            <img src="./assets/logo.svg" alt="Pós-Graduação em Fisiologia do Exercício" class="h-12 md:h-14 w-auto" width="160" height="56" fetchpriority="high">
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="50" class="inline-flex items-center gap-2 px-3 py-1 rounded border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+                            <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Reconhecida pelo MEC
+                        </div>
 
-                    <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-[1.1] text-white drop-shadow-lg">
-                        Fisiologia do Exercício, <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-cyan-200 drop-shadow-none">Aplicada a Grupos Especiais</span>
-                    </h1>
+                        <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-[1.1] text-white drop-shadow-lg text-left max-md:text-center">
+                            Fisiologia do Exercício, <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-cyan-200 drop-shadow-none">Aplicada a Grupos Especiais</span>
+                        </h1>
 
-                    <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md font-medium">
-                        Aprenda como prescrever de forma segura e eficaz para grupos especiais, e torne-se o Personal Trainer mais disputado do Mercado!
-                    </p>
+                        <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md font-medium text-left max-md:text-center">
+                            Aprenda como prescrever de forma segura e eficaz para grupos especiais, e torne-se o Personal Trainer mais disputado do Mercado!
+                        </p>
 
-                    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button onclick="abrirPopup()" class="bg-brand-primary text-brand-bg font-black uppercase py-4 px-8 rounded hover:bg-cyan-400 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200 w-full sm:w-auto">
-                            QUERO ME INSCREVER <i class="fas fa-arrow-right text-brand-bg"></i>
-                        </button>
-                    </div>
-                    <div data-aos="fade-up" data-aos-delay="400" class="pt-2">
-                        <p class="text-sm font-medium text-gray-400"><i class="fas fa-check-circle text-brand-primary mr-1" aria-hidden="true"></i> Aulas ao vivo e gravadas &nbsp;|&nbsp; <i class="fas fa-calendar-alt text-brand-primary mx-1" aria-hidden="true"></i> 18 meses de duração</p>
+                        <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 pt-4 max-md:w-full">
+                            <button onclick="abrirPopup()" class="bg-brand-primary text-brand-bg font-black uppercase py-4 px-8 rounded hover:bg-cyan-400 transition flex items-center justify-center gap-2 shadow-lg hover:scale-105 transform duration-200 w-full sm:w-auto max-md:w-full">
+                                QUERO ME INSCREVER <i class="fas fa-arrow-right text-brand-bg"></i>
+                            </button>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" class="pt-2">
+                            <p class="text-sm font-medium text-gray-400"><i class="fas fa-check-circle text-brand-primary mr-1" aria-hidden="true"></i> Aulas ao vivo e gravadas &nbsp;|&nbsp; <i class="fas fa-calendar-alt text-brand-primary mx-1" aria-hidden="true"></i> 18 meses de duração</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -337,7 +353,7 @@
                         Uma Pós-graduação feita para <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">profissionais...</span>
                     </h3>
                 </div>
-                <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6 max-w-[1300px] mx-auto">
                     <div class="flex gap-6 p-6 rounded-2xl bg-brand-bg border border-white/5 hover:border-brand-primary/30 transition-colors group" data-aos="fade-up" data-aos-delay="0">
                         <div class="shrink-0 w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-brand-bg transition-colors">
                             <i class="fas fa-user-md text-xl"></i>
@@ -392,7 +408,7 @@
                     </h3>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1300px] mx-auto">
                     <div class="relative bg-[#0d111d] border border-white/5 p-8 rounded-xl overflow-hidden group hover:border-brand-primary/50 transition-colors" data-aos="fade-up">
                         <div class="absolute -right-2 -top-4 text-[120px] font-black text-[#14233a] group-hover:text-brand-primary/10 transition-colors leading-none select-none z-0">01</div>
                         <div class="relative z-10">
@@ -566,7 +582,7 @@
 </div>
                 
                 <div class="mt-16 text-center" data-aos="fade-up">
-                    <p class="text-gray-400 text-sm mb-6">A grade completa possui 18 Módulos fundamentais para sua evolução.</p>
+                    <p class="text-gray-400 text-sm mb-6">A grade completa possui 19 Módulos fundamentais para sua evolução.</p>
                     <button onclick="abrirPopup()" class="bg-brand-primary text-brand-bg font-bold py-4 px-8 rounded-full uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,194,255,0.6)] transition hover:-translate-y-1 inline-block">
                         GARANTIR MINHA VAGA E ACESSO TOTAL
                     </button>
